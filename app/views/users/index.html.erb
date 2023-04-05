@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="invitations">
+        <% @invitations.each do |invitation| %>
+            <div class="invitation">
+                <%= link_to user_path(invitation.inviting_user) %>
+                    <div class="profile-img">
+                        <%= image_tag invitation.inviting_user.gravatar_url %>
+                    </div>
+                    <%= invitation.inviting_user.username %>
+                <% end %>
+                wants to be your friend
+                <div class="buttons">
+                    <div class="accept-btn">
+                        <%= link_to 'Accept', "invitations/#{invitation.inviting_user.id}/accept" %>
+                    </div>
+                    <div class="reject-btn">
+                        <%= link_to 'Reject', destroy_invitation_path, method: :delete %>
+                    </div>
+                </div>
+            <div>
+        <% end %>
+    </div>
+    <div class="users-list">
+        <% @users.each do |user| %>
+            <div class="user">
+                <%= link_to user_path(user) %>
+                    <div class="profile-img">
+                        <%= image_tag user.gravatar_url %>
+                    </div>
+                    <%= user.username %>
+                <% end %>
+                <% if user.is_friend %>
+                    <div class="friendship-info">
+                        You are already friends
+                    </div>
+                <% else %>
+                    <div class="invite-btn">
+                        <%= link_to 'Add Friend', "invitations/#{user.id}/invite" %>
+                    </div>
+                <%end%>
+            </div>
+        <% end %>
+    </div>
+</div>

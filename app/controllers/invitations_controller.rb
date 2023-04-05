@@ -14,7 +14,7 @@ class InvitationsController < ApplicationController
 
     def accept
         @user = current_user
-        @invitation = Invitation.find(params[:id])
+        @invitation = Invitation.where(inviting_user_id: params[:id])
         @inviting_user = User.find(@invitation.inviting_user)
         @user.friends << @inviting_user
         @invitation.destroy

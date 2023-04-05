@@ -1,0 +1,16 @@
+<div class="post-form">
+    <div class="form-author-info">
+        <div class="profile-img">
+            <%= image_tag current_user.gravatar_url %>
+        </div>
+        <%= current_user.username %>
+    </div>
+    <%= form_with model: @post do |f| %>
+        <%= f.label :title, 'Title:' %><br>
+        <%= f.text_field :title %>
+        <%= f.label :content, 'Content:' %><br>
+        <%= f.text_area :content, size: '65x20' %>
+        <%= f.hidden_field :author_id, value: current_user.id %>
+        <%= f.submit 'Post' %>
+    <% end %>
+</div>

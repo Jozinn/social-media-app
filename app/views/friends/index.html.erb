@@ -1,0 +1,12 @@
+<div class="frieds-list">
+    <% @friends.each do |friend| %>
+        <div class="friend">
+            <%= link_to friend_path(friend) %>
+                <div class="profile-img">
+                    <%= image_tag friend.gravatar_url %>
+                </div>
+                <%= friend.username %>
+            <% end %>
+        </div>
+    <% end %>
+</div>

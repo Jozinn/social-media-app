@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <div class="nav">
+      <div class="profile">
+        <%= link_to user_path(current_user) %>
+          <div class="profile-img">
+            <%= image_tag current_user.gravatar_url %>
+          </div>
+          <%= current_user.username %>
+        <% end %>
+      </div>
+      <div class="header">
+        <%= link_to 'SocialApp', home_path %>
+      </div>
+      <div class="logout">
+        <%= linkt_to 'Log out', destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
