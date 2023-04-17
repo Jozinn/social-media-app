@@ -13,3 +13,398 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+    background-color: lightgray;
+}
+
+ .nav {
+    background-color: darkslateblue;
+    padding: 1em;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+ }
+
+ .nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 500ms;
+ }
+
+ .nav a:hover {
+    color: darkgray;
+ }
+
+ .profile {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+ }
+
+ .profile-img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+ }
+
+ img {
+    object-fit: cover;
+ }
+
+ .container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .friends-list {
+    background-color: white;
+    min-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .friend {
+    padding: 1em 2em;
+    font-size: 12px;
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+.friend a {
+    text-decoration: none;
+    color: black;
+    transition: color 500ms;
+}
+
+.friend a:hover {
+    color: lightgray;
+}
+
+.profile-img {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.posts {
+    min-width: 50%;
+}
+
+.post {
+    color: black;
+    font-size: 12px;
+    background-color: white;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.post a {
+    text-decoration: none;
+    color: black;
+    transition: color 500ms;
+}
+
+.post a:hover {
+    color: lightgrey;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 10px;
+    margin-bottom: 1em;
+}
+
+.post-topic {
+    font-size: 24px;
+    margin-bottom: 0.5em;
+}
+
+.post-content {
+    border-bottom: lightgray solid 2px;
+    padding-bottom: 2em;
+}
+
+.likes-comments {
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes a {
+    text-decoration: none;
+    color: black;
+    transition: color 200ms;
+}
+
+.likes a:hover {
+    color: lightgray;
+}
+
+.comments-btn {
+    transition: color 200ms;
+    cursor: pointer;
+}
+
+.comments-btn:hover {
+    color: lightgray;
+}
+
+.comments {
+    border-top: 2px solid lightgray;
+    padding-top: 32px;
+}
+
+.comment {
+    background-color: lightgray;
+    border-radius: 10%;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.comment-author {
+    font-size: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 0.5em;
+}
+
+.comment-form form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+}
+
+input[type='text'] {
+    background-color: lightgray;
+    border-radius: 50%;
+    padding: 0.5em;
+    border: none;
+    outline: none;
+}
+
+input[type='text']:focus {
+    border: 1px solid gray;
+}
+
+input[type='submit'] {
+    background-color: darkslateblue;
+    color: white;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+.actions {
+    min-width: 20%;
+}
+
+.action {
+    background-color: darkslateblue;
+    padding: 1em 2em;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.action a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 1em;
+}
+
+.container-friend {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.profile-friends-list {
+    margin: 2em auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    font-size: 8px;
+}
+
+.profile-friends-list .friend {
+    text-align: center;
+    font-weight: 700;
+}
+
+.profile-friends-list .friend a {
+    color: black;
+    text-decoration: none;
+}
+
+.profile-friends-list .profile-img {
+    border-radius: 1em;
+    cursor: pointer;
+    width: 6em;
+    height: 6em;
+}
+
+.users-list {
+    background-color: white;
+    min-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .user {
+    padding: 1em 2em;
+    font-size: 12px;
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+.user a {
+    text-decoration: none;
+    color: black;
+    transition: color 500ms;
+}
+
+.user a:hover {
+    color: lightgray;
+}
+
+.invitations {
+    margin-top: 32px;
+}
+
+.invitations a {
+    text-decoration: none;
+    color: black;
+    transition: color 500ms;
+}
+
+.invitations a:hover {
+    color: lightgray;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    font-weight: 700;
+}
+
+.accept-btn {
+    padding: 1em 2em;
+    background-color: darkslateblue;
+    border-radius: 8px;
+}
+
+.accept-btn a {
+    color: white;
+    text-decoration: none;
+    transition: color 500ms;
+}
+
+.accept-btn a:hover {
+    color: lightgray;
+}
+
+.reject-btn {
+    padding: 1em 2em;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.reject-btn a {
+    color: black;
+    text-decoration: none;
+    transition: color 500ms;
+}
+
+.reject-btn a:hover {
+    color: darkslateblue;
+}
+
+.friendship-info {
+    margin: 1em;
+    font-weight: 700;
+}
+
+.invite-btn {
+    padding: 1em 2em;
+    background-color: darkslateblue;
+    border-radius: 8px;
+}
+
+.invite-btn a {
+    text-decoration: none;
+    color: white;
+    transition: color 500ms;
+}
+
+.invite-btn a:hover {
+    color: lightgrey;
+}
+
+.post-show {
+    color: black;
+    font-size: 12px;
+    background-color: white;
+    margin-top: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-show a {
+    text-decoration: none;
+    color: black;
+    transition: color 500ms;
+}
+
+.post-show a:hover {
+    color: lightgrey;
+}
+
+.form-author-info {
+    margin-bottom: 2em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.post-form label {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}

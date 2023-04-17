@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-friend">
     <div class="header">
         <div class="profile-img">
             <%= image_tag @friend.gravatar_url %>
@@ -39,7 +39,7 @@
                         <%= post.likes_number %>
                         <%= link_to 'Likes', "/post/#{post.id}/like" %>
                     </div>
-                    <div class="comments">
+                    <div class="comments-btn">
                         <%= post.comments_count %>
                         Comments
                     </div>

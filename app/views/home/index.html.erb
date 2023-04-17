@@ -34,7 +34,7 @@
                         <%= post.likes_number %>
                         <%= link_to 'Likes', "/post/#{post.id}/like" %>
                     </div>
-                    <div class="comments">
+                    <div class="comments-btn">
                         <%= post.comments_count %>
                         Comments
                     </div>
@@ -51,10 +51,12 @@
                             <%= comment.content %>
                         </div>
                     <% end %>
-                    <%= form_with model: @comment do |f| %>
-                        <%= f.text_field :content, placeholder: 'Write a comment...' %>
-                        <%= f.submit 'Send' %>
-                    <% end %>
+                    <div class="comment-form">
+                        <%= form_with model: @comment do |f| %>
+                            <%= f.text_field :content, placeholder: 'Write a comment...' %>
+                            <%= f.submit 'Send' %>
+                        <% end %>
+                    </div>
                 </div>
             </div>
         <% end %>

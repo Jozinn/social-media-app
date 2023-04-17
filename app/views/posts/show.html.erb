@@ -1,26 +1,28 @@
-<div class="post">
-    <div class="author">
-        <div class="profile-img">
-            <%= image_tag author.gravatar_url %>
+<div class="post-show">
+    <div class="post-body">
+        <div class="author">
+            <div class="profile-img">
+                <%= image_tag author.gravatar_url %>
+            </div>
+            <%= linkt_to post.author, user_path(post.author) %>
         </div>
-        <%= linkt_to post.author, user_path(post.author) %>
-    </div>
-    <%= link_to post_path(post) %>
-        <h3 class="post-topic">
-            <%= post.title %>
-        </h3>
-        <p class="post-content">
-            <%= post.content %>
-        </p>
-    <% end %>
-    <div class="likes-comments">
-        <div class="likes">
-            <%= post.likes_number %>
-            <%= link_to 'Likes', "/post/#{post.id}/like" %>
-        </div>
-        <div class="comments">
-            <%= post.comments_count %>
-            Comments
+        <%= link_to post_path(post) %>
+            <h3 class="post-topic">
+                <%= post.title %>
+            </h3>
+            <p class="post-content">
+                <%= post.content %>
+            </p>
+        <% end %>
+        <div class="likes-comments">
+            <div class="likes">
+                <%= post.likes_number %>
+                <%= link_to 'Likes', "/post/#{post.id}/like" %>
+            </div>
+            <div class="comments-btn">
+                <%= post.comments_count %>
+                Comments
+            </div>
         </div>
     </div>
     <div class="comments">
